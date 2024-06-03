@@ -1,0 +1,23 @@
+.userinfo{
+    text-align: center;
+}
+input{
+    border:  solid 1px black;
+    border-radius: 5px;
+}
+.userheading{
+    color: gray;
+}
+.form-error{
+    color: red;
+    font-style: italic;
+    font-size:small;
+}
+.login{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.error{
+    font-style: italic;
+    font-size: small;
+}

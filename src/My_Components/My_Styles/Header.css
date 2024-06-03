@@ -1,0 +1,9 @@
+.for_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.for_flex .btn{
+    margin-top: 20px;
+
+}
+    
