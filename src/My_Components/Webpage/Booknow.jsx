@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com';
 
 export const Booknow = () => {
   const location = useLocation();

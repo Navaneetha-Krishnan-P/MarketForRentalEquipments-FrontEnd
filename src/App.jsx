@@ -22,7 +22,7 @@ import AdminProducts from "./My_Components/User_Info/AdminProducts";
 import { Booknow } from "./My_Components/Webpage/Booknow";
 import Ender from "./My_Components/Webpage/Ender";
 
-let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com';
 
 function App() {
   const [allproducts, setAllproducts] = useState([]);

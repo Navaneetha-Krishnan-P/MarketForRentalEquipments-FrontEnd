@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-let server = 'https://marketforrentalequipments-backend-1.onrender.com/'
+let server = 'https://marketforrentalequipments-backend-1.onrender.com'
 
 
 const Admin = () => {

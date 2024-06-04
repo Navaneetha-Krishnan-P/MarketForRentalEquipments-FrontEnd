@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 
-const server = 'https://marketforrentalequipments-backend-1.onrender.com/';
+const server = 'https://marketforrentalequipments-backend-1.onrender.com';
 
 const ForgotPassword = () => {
     const [verifyEmail, setVerifyEmail] = useState("");
