@@ -1,6 +1,6 @@
 
 import React from 'react';
-let server = 'http://localhost:5001';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
 import "../My_Styles/Card.css";
 
 const Card = ({ product, onBookNow }) => {

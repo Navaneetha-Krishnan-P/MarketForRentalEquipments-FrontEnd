@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import "../My_Styles/LogIn.css";
 
-let server = 'http://localhost:5001';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
 
 export const LogIn = ({ LoginShow }) => {
     const [show, setShow] = useState(false);

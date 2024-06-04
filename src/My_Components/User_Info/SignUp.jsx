@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 
-let server = 'http://localhost:5001';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
 
 export const SignUp = () => {
   const [signupShow, setSignupShow] = useState(false);

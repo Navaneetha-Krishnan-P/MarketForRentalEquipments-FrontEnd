@@ -5,7 +5,7 @@ import "../My_Styles/AdminProducts.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-let server = 'http://localhost:5001';
+let server = 'https://marketforrentalequipments-backend-1.onrender.com/';
 
 const AdminProducts = () => {
   const [productId, setProductId] = useState("");
