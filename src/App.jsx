@@ -41,7 +41,7 @@ function App() {
     const getProducts = async () => {
       try {
         const response = await axios.get(server + '/productDetails');
-        console.log('response.data: ', response.data);
+
         setAllproducts(response.data);
         
       } catch (error) {
