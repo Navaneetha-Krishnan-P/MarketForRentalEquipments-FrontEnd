@@ -144,7 +144,7 @@ export const SignUp = () => {
                 emoji.
               </small>
             </div><br />
-            <div>
+            <div className='buttongroup'>
               <button type="submit" className="btn btn-info">
                 Sign Up
               </button>

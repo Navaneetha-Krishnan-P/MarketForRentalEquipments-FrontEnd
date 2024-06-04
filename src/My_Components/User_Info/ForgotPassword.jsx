@@ -98,7 +98,7 @@ const ForgotPassword = () => {
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div><br />
                         {!showDob ?
-                            <div>
+                            <div className='buttongroup'>
                                 <button className="btn btn-info" onClick={handleEmailVerification}>Confirm Email</button>
                             </div>
                             :
@@ -107,11 +107,11 @@ const ForgotPassword = () => {
                                     <label htmlFor="dateInput"><b>Enter your Date-of-Birth to reset your password</b></label><br />
                                     <input type="date" id="dateInput" value={verifyDob} onChange={handleVerifyDob} name="dateInput" />
                                 </div><br />
-                                <div><button type="submit" className="btn btn-info" onClick={handleDobVerification}>Verify your DOB </button></div>
+                                <div className='buttongroup'><button type="submit" className="btn btn-info" onClick={handleDobVerification}>Verify your DOB </button></div>
                             </div>
                         }
                         {showPassword &&
-                            <div>
+                            <div><br/>
                                 <div className="form-group">
                                     <label htmlFor="inputPassword5"><b>Enter Your New Password</b></label><br />
                                     <input
@@ -126,7 +126,7 @@ const ForgotPassword = () => {
                                     </small>
                                 </div><br /><br/>
 
-                                <div>
+                                <div className='buttongroup'>
                                     <button onClick={handlePasswordSubmit} type="submit" className="btn btn-success">Confirm Password</button>
                                 </div>
                             </div>

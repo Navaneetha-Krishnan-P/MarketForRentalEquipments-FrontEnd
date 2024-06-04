@@ -48,6 +48,7 @@ export const LogIn = ({ LoginShow }) => {
                 <div className='userinfo'>
                     <form onSubmit={formik.handleSubmit}>
                         <h5 className='userheading'><b>For User Login</b></h5><br />
+                        <div className='formstyle'>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1"><b>Email Address</b></label><br />
                             <input
@@ -82,12 +83,14 @@ export const LogIn = ({ LoginShow }) => {
                                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                             </small>
                         </div><br />
+                        </div>
+                       
                         <Link to={"/forgotPassword"}>Forgot Password ? </Link><br /><br />
-                        <div>
+                        <div className='buttongroup'>
                             <button type="submit" className="btn btn-success">Log In</button>
                         </div><br /><br />
                         <h5 className='userheading'><b>For Admin LogIn [Only For Admins]</b></h5><br />
-                        <div>
+                        <div className='buttongroup'>
                             <Link to={"/admin"}><button type="button" className="btn btn-outline-danger"><b>Log In as Admin</b></button></Link>
                         </div>
                     </form>

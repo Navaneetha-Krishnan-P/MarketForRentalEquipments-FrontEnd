@@ -112,7 +112,7 @@ export const Booknow = () => {
           </div>
         </div>
       </div>
-      <div className='userinfo' style={{color:"red"}}><p><b>For Order Confirmation, Enter all the below Details !</b></p></div>
+      <div style={{color:"red",textAlign:"center"}}><p><b>For Order Confirmation, Enter all the below Details !</b></p></div>
 
       <div className='login'>
         <form className='userinfo'>

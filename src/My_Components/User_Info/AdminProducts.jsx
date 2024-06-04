@@ -131,7 +131,7 @@ const AdminProducts = () => {
           </form>
         </nav>
       </div>
-      <div className="productinfo">
+      <div className="login">
         <form>
           <div className="form-group">
             <label htmlFor="id"><b>Product Id</b></label><br />

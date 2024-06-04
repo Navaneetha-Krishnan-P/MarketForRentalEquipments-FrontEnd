@@ -70,7 +70,7 @@ const Admin = () => {
                         /><br />
                         <small id="emailHelp" className="form-text text-muted">Enter your Admin Password</small>
                     </div><br />
-                    <div>
+                    <div className='buttongroup'>
                         <button onClick={handleAdminSubmit} className="btn btn-danger">Log In</button>
                     </div>
                 </form>
