@@ -143,7 +143,7 @@ export const Booknow = () => {
 
           <div><b>Total Amount = Rs {total * totalDays} </b></div><br />
 
-          <div>
+          <div className='buttongroup'>
             <button type="button" className="btn btn-success" onClick={handleConfirmOrder}><b>Pay to Confirm Order</b></button>
           </div><br/>
           <p>
