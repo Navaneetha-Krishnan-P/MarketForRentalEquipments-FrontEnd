@@ -62,7 +62,7 @@ function App() {
   return (
     <>
       <Header loginShow={handleLoginShow} setLoginShow={setLoginShow} login={loginShow} loginData={loginData} adminShow={adminShow} setAdminShow={setAdminShow}/>
-      {loginShow && !adminShow ? <Navbar onData={handleDataFromSearch} /> : null}
+      {(loginShow || adminShow) ? <Navbar onData={handleDataFromSearch} adminShow={adminShow} /> : null}
       
       <Routes>
         <Route path="/logIn" element={<LogIn LoginShow={handleLoginShow} setLoginData={handleLoginData} />} />
@@ -70,7 +70,7 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/admin" element={<Admin setAdminShow={setAdminShow} />} />
         <Route path="/adminProducts" element={<AdminProducts />} />
-        {loginShow ? (
+        {(loginShow || adminShow) ? (
           <>
             <Route path="/" element={<Home products={allproducts} searchData={dataFromSearch} />} />
             <Route path="/about" element={<About />} />

@@ -38,6 +38,8 @@ export const Header = ({ login, loginData, setLoginShow,adminShow,setAdminShow }
                     <hr />
                     <CgProfile size={20} />
                     <p><b>{loginData.email}</b></p>
+                    {adminShow ?
+                    <p><b>Admin</b></p>:null}
                     <div className='logoutbutton'>
                       <button className="btn btn-danger" onClick={handleLogout}>Log Out</button>
                     </div>

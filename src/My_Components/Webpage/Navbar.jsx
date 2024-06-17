@@ -12,7 +12,7 @@ import { TbAirConditioning } from "react-icons/tb";
 
 
 
-export const Navbar = ({ onData }) => {
+export const Navbar = ({ onData,adminShow }) => {
 
     const [search, setSearch] = useState("")
 
@@ -28,7 +28,7 @@ export const Navbar = ({ onData }) => {
     return (
         <div className='nav'>
             <div className='nav2'>
-                <Link to={"/"}><button type="button" className="btn btn-outline-dark"><b>Home</b></button></Link>&nbsp;&nbsp;
+                <Link to={"/"}><button type="button" className="btn btn-outline-dark"><b>Home</b></button></Link>&nbsp;
                 <div className="dropdown">
                     <button className="btn btn-outline-dark"><b>Our Equipments</b></button>
                     <div className="dropdown-content">
@@ -44,8 +44,13 @@ export const Navbar = ({ onData }) => {
                         <Link to={"/fans"}><PiFanFill size={20} /> &nbsp; Fan</Link>
                         <Link to={"/airCoolers"}><TbAirConditioning size={20} /> &nbsp; Air Conditioner</Link>
                     </div>
-                </div>&nbsp;&nbsp;
-                <Link to={"/about"}><button type="button" className="btn btn-outline-dark"><b>About us</b></button></Link>&nbsp;&nbsp;
+                </div>&nbsp;
+                <Link to={"/about"}><button type="button" className="btn btn-outline-dark"><b>About us</b></button></Link>&nbsp;
+                { adminShow ?
+                <div>
+                <Link to={"/adminProducts"}><button type="button" className="btn btn-dark"><b>Admin Page</b></button></Link>
+                </div>
+                :null}
             </div>
             <nav className="navbar navbar-light bg-light">
                 <form className="form-inline" onSubmit={handleSearchButton}>
