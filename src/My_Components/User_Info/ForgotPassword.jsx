@@ -115,7 +115,7 @@ const ForgotPassword = () => {
                                 <div className="form-group">
                                     <label htmlFor="inputPassword5"><b>Enter Your New Password</b></label><br />
                                     <input
-                                        type="password"
+                                        type="text"
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
                                         id="inputPassword5"

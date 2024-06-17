@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import "../My_Styles/Home.css";
@@ -42,7 +38,6 @@ const Home = ({ products, searchData }) => {
 
   return (
     <div>
-      <Text />
       {searchData === "" ? (
         <div className='homecard'>
           {products.map((all, index) => (

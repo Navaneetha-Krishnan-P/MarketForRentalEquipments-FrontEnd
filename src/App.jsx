@@ -1,5 +1,6 @@
+
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -7,7 +8,7 @@ import { Header } from './My_Components/Webpage/Header';
 import { Navbar } from './My_Components/Webpage/Navbar';
 import { LogIn } from "./My_Components/User_Info/LogIn";
 import { SignUp } from "./My_Components/User_Info/SignUp";
-import ForgotPassword from "./My_Components/User_Info/ForgotPassword"
+import ForgotPassword from "./My_Components/User_Info/ForgotPassword";
 import Home from "./My_Components/Webpage/Home";
 import About from "./My_Components/Webpage/About";
 import WashingMachines from "./My_Components/Products/WashingMachines";
@@ -21,6 +22,7 @@ import Admin from "./My_Components/User_Info/Admin";
 import AdminProducts from "./My_Components/User_Info/AdminProducts";
 import { Booknow } from "./My_Components/Webpage/Booknow";
 import Ender from "./My_Components/Webpage/Ender";
+import { Text } from "./My_Components/Webpage/Text";
 
 let server = 'https://marketforrentalequipments-backend-1.onrender.com';
 
@@ -28,6 +30,9 @@ function App() {
   const [allproducts, setAllproducts] = useState([]);
   const [dataFromSearch, setDataFromSearch] = useState('');
   const [loginShow, setLoginShow] = useState(false);
+  const [loginData, setLoginData] = useState({});
+  const [adminShow, setAdminShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleDataFromSearch = (data) => {
     setDataFromSearch(data);
@@ -35,15 +40,18 @@ function App() {
 
   const handleLoginShow = (data1) => {
     setLoginShow(data1);
-  }
+    navigate('/logIn');
+  };
+
+  const handleLoginData = (data) => {
+    setLoginData(data);
+  };
 
   useEffect(() => {
     const getProducts = async () => {
       try {
         const response = await axios.get(server + '/productDetails');
-
         setAllproducts(response.data);
-        
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -53,24 +61,31 @@ function App() {
 
   return (
     <>
-      <Header loginShow={handleLoginShow} login={loginShow}/>
-      <Navbar onData={handleDataFromSearch} />
+      <Header loginShow={handleLoginShow} setLoginShow={setLoginShow} login={loginShow} loginData={loginData} adminShow={adminShow} setAdminShow={setAdminShow}/>
+      {loginShow && !adminShow ? <Navbar onData={handleDataFromSearch} /> : null}
+      
       <Routes>
-        <Route path="/logIn" element={<LogIn LoginShow={handleLoginShow} />} />
+        <Route path="/logIn" element={<LogIn LoginShow={handleLoginShow} setLoginData={handleLoginData} />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<Admin setAdminShow={setAdminShow} />} />
         <Route path="/adminProducts" element={<AdminProducts />} />
-        <Route path="/" element={<Home products={allproducts} searchData={dataFromSearch} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/booknow" element={<Booknow />} />
-        <Route path="/cars" element={<Cars products={allproducts} />} />
-        <Route path="/bikes" element={<Bikes products={allproducts} />} />
-        <Route path="/buses" element={<Buses products={allproducts} />} />
-        <Route path="/washingMachines" element={<WashingMachines products={allproducts} />} />
-        <Route path="/fridges" element={<Fridges products={allproducts} />} />
-        <Route path="/fans" element={<Fans products={allproducts} />} />
-        <Route path="/airCoolers" element={<AirCoolers products={allproducts} />} />
+        {loginShow ? (
+          <>
+            <Route path="/" element={<Home products={allproducts} searchData={dataFromSearch} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/booknow" element={<Booknow />} />
+            <Route path="/cars" element={<Cars products={allproducts} />} />
+            <Route path="/bikes" element={<Bikes products={allproducts} />} />
+            <Route path="/buses" element={<Buses products={allproducts} />} />
+            <Route path="/washingMachines" element={<WashingMachines products={allproducts} />} />
+            <Route path="/fridges" element={<Fridges products={allproducts} />} />
+            <Route path="/fans" element={<Fans products={allproducts} />} />
+            <Route path="/airCoolers" element={<AirCoolers products={allproducts} />} />
+          </>
+        ) : (
+          <Route path="/" element={<Text />} />
+        )}
       </Routes>
       <Ender />
     </>
@@ -78,6 +93,9 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
 
