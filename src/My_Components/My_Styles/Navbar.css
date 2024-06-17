@@ -13,7 +13,7 @@
 .nav2 {
   display: flex;
   align-items: center;
-  gap: 5px;  /* Adjusts spacing between elements */
+  gap: 5px;
 }
 
 .form-control {
