@@ -6,7 +6,6 @@ import { CgProfile } from "react-icons/cg";
 
 
 export const Header = ({ login, loginData, setLoginShow,adminShow,setAdminShow }) => {
-  console.log('loginData: ', loginData);
   const navigate=useNavigate();
 
   const handleLogout = () => {
