@@ -15,7 +15,6 @@ export const LogIn = ({ LoginShow, setLoginData }) => {
             pw: ''
         },
         validate: values => {
-            console.log('loginvalues: ', values);
             const errors = {};
             if (!values.email) {
                 errors.email = 'Enter Email Address';
